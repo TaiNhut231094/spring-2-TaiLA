@@ -28,44 +28,44 @@
                             <table class="table">
                                 <tr>
                                     <td class="row pb-0">
-                                        <span class="col-lg-5">Mã sản phẩm:</span>
-                                        <span class="col-lg-7">{{username}}</span>
+                                        <span class="col-lg-4">Mã sản phẩm:</span>
+                                        <span class="col-lg-8">1233454544</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Tác giả:</span>
-                                        <span class="col-lg-8">{{employeeDetail.name}}</span>
+                                        <span class="col-lg-8 font-weight-bold">Nguyễn Hoài Nam</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Dịch giả:</span>
-                                        <span class="col-lg-8">{{employeeDetail.name}}</span>
+                                        <span class="col-lg-8">Thi Hoa</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Nhà xuất bản:</span>
-                                        <span class="col-lg-8">{{employeeDetail.name}}</span>
+                                        <span class="col-lg-8">Dân Trí</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Số trang</span>
-                                        <span class="col-lg-8">{{employeeDetail.dateOfBirth}}</span>
+                                        <span class="col-lg-8">284</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Kích thước: </span>
-                                        <span class="col-lg-8">{{employeeDetail.email}}</span>
+                                        <span class="col-lg-8">14x20.5 cm</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="row pb-0">
                                         <span class="col-lg-4">Ngày phát hành:</span>
-                                        <span class="col-lg-8">{{employeeDetail.address}}</span>
+                                        <span class="col-lg-8">26-01-2022</span>
                                     </td>
                                 </tr>
                             </table>
@@ -75,7 +75,11 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="row">
                         <div class="col-lg-12">
-                            <span class="col-lg-8 bg-success text-white">Giá Phương Nam: 94.400đ(Đã có VAT)</span>
+                            <div class="js-header-nav"
+                                 style="z-index: 1; background-color: #19692c; width: 300px; height: 70px;">
+                                <span class="m-3 text-white">Giá Phương Nam: <i style="font-size: 20px">94.400đ </i>(Đã có VAT)</span>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row">
@@ -84,11 +88,12 @@
                                 <span class="col-lg-3 bg-white text-center border" style="color: red">-</span>
                                 <span class="col-lg-6 bg-white text-center border" style="color: red">1</span>
                                 <span class="col-lg-3 bg-white text-center border" style="color: red">+</span>
+                                <span class="text-center">Số lượng</span>
                             </div>
 
                         </div>
                         <div class="col-lg-8">
-                            <input class="col-sm-10 bg-success text-white border-white" type="button"
+                            <input class="col-sm-10 mb-2 bg-success text-white border-white" type="button"
                                    value="THÊM VÀO GIỎ HÀNG">
                             <input class="col-sm-10 bg-success text-white border-white" type="button" value="MUA NGAY">
                         </div>
@@ -97,8 +102,8 @@
             </div>
         </div>
         <hr style="color: #8fd19e; border: 2px;">
-        <h5 style="color: #19692c; text-align: center">GIỚI THIỆU SÁCH</h5>
-        <p>
+        <h5 style="color: #19692c; text-align: center"><i style="size: A3">GIỚI THIỆU SÁCH</i></h5>
+        <pre style="font-style: italic">
             Thiền định để tâm an dịu, thiền định để tận hưởng cuộc sống: thiền với một tâm thức tỉnh giác là một phương
             tiện để đạt được sự an bình và minh mẫn trong tâm hồn, một phương pháp mà ai cũng có thể tiếp cận.
 
@@ -129,7 +134,8 @@
             Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và
             địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, thuế
             nhập khẩu (đối với đơn hàng giao từ nước ngoài có giá trị trên 1 triệu đồng).....
-        </p>
+        </pre>
+        <span class="col-lg-2 bg-success text-white">SÁCH CÙNG TÁC GIẢ</span>
     </div>
 </div>
 <script src="js/jquery.min.js"></script>

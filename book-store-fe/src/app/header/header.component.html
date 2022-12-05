@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2">
+      <a routerLink="" href=""><span><img src="../assets/images/logophuongnam.jpg" width="100" height="100"></span></a>
+    </div>
+    <div class="col-lg-2 pt-5">
+            <span style="color: red"><i class="fa-solid fa-phone-volume" style="height: 40px"></i>
+            Hotline: 1900 6656</span>
+    </div>
+    <div class="col-lg-4 pt-5">
+      <div class="input-group">
+        <input type="search" class="form-control" placeholder="Search"/>
+        <button type="button" class="btn btn-danger">Tìm kiếm</button>
+      </div>
+    </div>
+    <div class="col-lg-2 pt-5 pl-5">
+      <span [hidden]="isLoggedIn" style="color: #c82333"><a routerLink="/security/sign-in" class="navbar-brand" href="">
+        <i class="fa-solid fa-cart-shopping" style="height: 40px"></i></a>GIỎ HÀNG
+      </span>
+      <span [hidden]="!isLoggedIn" style="color: #c82333"><a routerLink="/cart" class="navbar-brand" href="">
+        <i class="fa-solid fa-cart-shopping" style="height: 40px"></i>({{totalQuantity}})</a>GIỎ HÀNG
+      </span>
+    </div>
+    <div class="col-lg-2 pt-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" style="color: #21a117">
+            <span [hidden]="isLoggedIn"><i class="fas fa-user fa-lg" style="height: 20px"></i> Đăng nhập</span>
+            <span [hidden]="!isLoggedIn"><i class="fas fa-user-check fa-lg" style="height: 20px"></i>{{username}}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a [hidden]="isLoggedIn" class="dropdown-item" routerLink="/security/sign-up"><i class="fas fa-user-plus"></i> &nbsp; Đăng Kí</a></li>
+            <li><a [hidden]="isLoggedIn" class="dropdown-item" routerLink="/security/sign-in"><i class="fas fa-user"></i> &nbsp; Đăng Nhập</a>
+            </li>
+            <li><a [hidden]="!isLoggedIn" class="dropdown-item" routerLink="/customer/create"><i class="fas fa-user-cog"></i> &nbsp; Thông Tin
+              Tài Khoản</a></li>
+            <li><a [hidden]="!isLoggedIn" (click)="logOut()" class="dropdown-item" style="color: #F44336" routerLink=""><i
+              class="fas fa-user-times"></i> &nbsp;
+              Đăng Xuất</a></li>
+          </ul>
+        </li>
+    </div>
+  </div>
+</div>
+<div class="js-header-nav sticky"
+     style="display: block; position: sticky; z-index: 1; background-color: #1c7430; height: 50px;">
+  <div class="container">
+    <nav style="padding-left: 80px;" class="navbar navbar-expand-lg navbar-light">
+      <a style="color: white" class="navbar-brand pr-5 pt-0" routerLink="">DANH MỤC SÁCH</a>
+      <a style="color: white" class="navbar-brand pr-5 pt-0" href="">SÁCH BÁN CHẠY</a>
+      <a style="color: white" class="navbar-brand pr-5 pt-0" href="">CHƯƠNG TRÌNH KHUYẾN MÃI</a>
+      <a style="color: white" class="navbar-brand pr-5 pt-0" href="">GIẢM GIÁ ĐẶC BIỆT</a>
+    </nav>
+  </div>
+</div>
