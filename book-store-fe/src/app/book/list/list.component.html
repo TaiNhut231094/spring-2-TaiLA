@@ -1,10 +1,10 @@
 <section class="banner_main col-lg-12 pt-2">
   <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+<!--    <ol class="carousel-indicators">-->
+<!--      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+<!--      <li data-target="#myCarousel" data-slide-to="1"></li>-->
+<!--      <li data-target="#myCarousel" data-slide-to="2"></li>-->
+<!--    </ol>-->
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
         <img class="first-slide" src="../assets/images/Mã-giảm-giá-Sách-Tiki-1-660x289.jpg" alt="First slide"
@@ -59,9 +59,10 @@
           <input type="text" id="author" class="form-control" size="17"
                  placeholder="Nhập tác giả" formControlName="author"/>
         </div>
-        <button type="submit" class="btn btn-success mx-4 h-25" (keyup.enter)="searchBook()">
-          <i class="fas fa-search"></i> &nbsp; Tìm Kiếm
-        </button>
+        <div class="input-group col-lg-3">
+          <button type="button" class="btn btn-danger mx-2 ps-lg-3 pe-lg-3" (click)="searchBook()" (keyup.enter)="searchBook()">
+            <i class="fas fa-search"></i>&nbsp; Tìm kiếm</button>
+        </div>
       </form>
     </div>
 

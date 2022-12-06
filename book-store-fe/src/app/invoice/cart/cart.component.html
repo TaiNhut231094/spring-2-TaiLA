@@ -2,10 +2,9 @@
   <div class="container">
     <div class="row d-flex justify-content-around align-items-center h-100">
       <div class="d-flex justify-content-between align-items-center mt-5">
-        <h3 class="fw-normal mb-0 text-black">GIỎ HÀNG</h3>
+        <h2 class="fw-normal mb-0 text-black text-center">GIỎ HÀNG</h2>
       </div>
-      <div class="col-md-8">
-
+      <div class="col-md-8" *ngIf="carts.length != 0">
         <div class="card rounded-3 mb-2" *ngFor="let item of carts; index as i">
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
@@ -40,6 +39,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-md-8 text-center" *ngIf="carts.length == 0">
+        <h1 style="opacity: 0.5;">GIỎ HÀNG TRỐNG</h1>
       </div>
 
         <div class="col-md-4">

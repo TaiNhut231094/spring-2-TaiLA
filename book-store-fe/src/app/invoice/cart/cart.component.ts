@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
               private dataService: DataService,
               private tokenStorageService: TokenStorageService,
               private title: Title) {
-    this.title.setTitle('Giỏ hang');
+    this.title.setTitle('Giỏ hàng');
   }
 
   ngOnInit(): void {
