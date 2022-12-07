@@ -41,23 +41,22 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
-    @JsonBackReference
     private Author author;
 
     @ManyToOne
     @JoinColumn(name = "publishing_company_id", referencedColumnName = "id")
-    @JsonBackReference
     private PublishingCompany publishingCompany;
 
     @ManyToOne
     @JoinColumn(name = "translator_id", referencedColumnName = "id")
-    @JsonBackReference
     private Translator translator;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private Set<InvoiceDetail> invoiceDetailSet;
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private Set<BookDetail> bookDetailSet;
+    @JsonBackReference
+    private Set<InvoiceDetail> invoiceDetailSet;
 }
 

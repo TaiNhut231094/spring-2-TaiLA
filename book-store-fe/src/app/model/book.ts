@@ -1,6 +1,7 @@
 import {Author} from './author';
 import {PublishingCompany} from './publishing-company';
 import {Translator} from './translator';
+import {Category} from './category';
 
 export interface Book {
   id?: number;
@@ -15,4 +16,5 @@ export interface Book {
   author?: Author;
   publishingCompany?: PublishingCompany;
   translator?: Translator;
+  category?: Category;
 }

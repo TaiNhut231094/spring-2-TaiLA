@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   books: Book[];
   categories: Category[] = [];
   pageSize: number;
-  cart: any = this.bookService.getCart();
+  carts: any = this.bookService.getCart();
 
   searchForm: FormGroup = new FormGroup({
     author: new FormControl('', [Validators.pattern('^[a-zA-Z0-9]+$')]),
@@ -60,11 +60,11 @@ export class ListComponent implements OnInit {
   }
 
   onAddToCart(book: any) {
-    const index = this.cart.findIndex((item) => {
+    const index = this.carts.findIndex((item) => {
       return item.id === book.id;
     });
     if (index >= 0) {
-      this.cart[index].quantity += 1;
+      this.carts[index].quantity += 1;
     } else {
       const cartItem: any = {
         id: book.id,
@@ -74,9 +74,9 @@ export class ListComponent implements OnInit {
         quantity: 1,
         imageUrl: book.imageUrl
       };
-      this.cart.push(cartItem);
+      this.carts.push(cartItem);
     }
-    this.cartService.saveCart(this.cart);
+    this.cartService.saveCart(this.carts);
     this.dataService.changeData({
       quantity: this.cartService.getTotalQuantity()
     });

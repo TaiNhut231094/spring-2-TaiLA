@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService implements IBookService {
@@ -25,5 +26,10 @@ public class BookService implements IBookService {
     @Override
     public Page<BookProjection> findAllPaginationAndSearch(Pageable pageable, String category, String title, String author) {
         return bookRepository.findAllPaginationSearch(pageable, category, title, author);
+    }
+
+    @Override
+    public Optional<Book> findById(Long id) {
+        return bookRepository.findById(id);
     }
 }

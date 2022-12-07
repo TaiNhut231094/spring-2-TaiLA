@@ -1,0 +1,153 @@
+<div class="container">
+  <section class="bg-light" style="margin-top: 100px">
+    <div class="container pb-2">
+      <div class="row">
+        <div class="col-lg-12 pb-0 col">
+          <div class="titlepage">
+            <h2>CHI TIẾT SÁCH</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-5 col">
+          <div class="card">
+            <img class="card-img img-fluid" style="width: 100%; height: 500px" [src]="book?.imageUrl" alt="Card image cap" id="product-detail">
+          </div>
+        </div>
+        <div class="col-lg-8 mt-5 col">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="h2 text-center">{{book?.title}}</h2>
+              <ul class="list-inline">
+                <li class="list-inline-item w-25">
+                  <p>Thể loại: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.category?.name}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Mã sản phẩm: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.id}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Tác giả: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.author?.name}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Dịch giả: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.translator?.name}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Nhà xuất bản: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.publishingCompany?.name}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Số trang: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.numberOfPages}} trang</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Kích thước: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.size}} cm</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Ngày phát hành: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="text-muted"><strong>{{book?.releaseDate | date: 'dd/MM/yyyy'}}</strong></p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Giá: </p>
+                </li>
+                <li class="list-inline-item w-50">
+                  <p class="h3 text-danger align-middle"><strong>{{book?.price | number}} ₫</strong>
+                  </p>
+                </li>
+                <li class="list-inline-item w-25">
+                  <p>Giới thiệu:</p>
+                </li>
+                <li class="list-inline-item w-100">
+                  <p class="text-muted" style="text-align: justify"><strong>{{book?.summary}}</strong></p>
+                </li>
+              </ul>
+
+              <div>
+                <div class="row mt-3">
+                  <div class="col d-flex justify-content-evenly">
+                      <button routerLink="" type="button" class="btn btn-danger mx-2 ps-lg-3 pe-lg-3">Quay lại</button>
+                  </div>
+                  <div class="col d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-success mx-2 ps-lg-3 pe-lg-3" (click)="onAddToCart(book)">Thêm vào giỏ hàng</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <h2 class="h2 text-center animate__animated animate__slideInDown">TOP SÁCH MỚI NHẤT</h2>
+    </div>
+
+    <div class="row ms-5">
+      <div class="col-1 align-self-center">
+        <a href="#multi-item-example" role="button" data-bs-slide="prev">
+          <i class="text-dark fas fa-chevron-left"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+      </div>
+
+      <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item my-5" data-bs-ride="carousel">
+        <div class="carousel-inner product-links-wap" role="listbox">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-3" *ngFor="let item of books | slice: 0: 4">
+                <a [routerLink]="['/detail', item.id]">
+                  <img class="card-img img-fluid" [src]="item.imageUrl" alt="Product Image 1">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-3" *ngFor="let item of books | slice: 4: 8">
+                <a [routerLink]="['/detail', item.id]">
+                  <img class="card-img img-fluid" [src]="item.title" alt="Product Image 1">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-3" *ngFor="let item of books | slice: 8: 12">
+                <a [routerLink]="['/detail', item.id]">
+                  <img class="card-img img-fluid" [src]="item.title" alt="Product Image 1">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1 align-self-center">
+        <a href="#multi-item-example" role="button" data-bs-slide="next">
+          <i class="text-dark fas fa-chevron-right"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

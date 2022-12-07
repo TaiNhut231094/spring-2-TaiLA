@@ -22,7 +22,11 @@ export class BookService {
   }
 
   getAllCategory(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL + 'book/category');
+    return this.http.get<Category[]>(`${API_URL}book/category`);
+  }
+
+  findById(id: number): Observable<Book> {
+    return this.http.get<Book>(`${API_URL}book/${id}`);
   }
 
   getCart() {

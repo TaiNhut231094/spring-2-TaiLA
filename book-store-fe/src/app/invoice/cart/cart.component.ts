@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   totalPrice = this.cartService.getTotalPrice();
   totalQuantity = this.cartService.getTotalQuantity();
   name: string;
+  phoneNumber: string;
   street: string;
   district: string;
   provinceCity: string;

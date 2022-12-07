@@ -1,6 +1,7 @@
 package com.codegym.book_store.controller;
 
 import com.codegym.book_store.dto.projections.BookProjection;
+import com.codegym.book_store.model.Book;
 import com.codegym.book_store.model.Category;
 import com.codegym.book_store.service.IBookService;
 import com.codegym.book_store.service.ICategoryService;
@@ -8,12 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,5 +59,15 @@ public class BookRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(categories, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Book> findBookById(@PathVariable Long id) {
+        Book book = this.bookService.findById(id).orElse(null);
+
+        if (book == null) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(book, HttpStatus.OK);
     }
 }
