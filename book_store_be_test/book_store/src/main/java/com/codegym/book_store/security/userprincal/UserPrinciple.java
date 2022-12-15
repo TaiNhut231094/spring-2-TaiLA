@@ -1,5 +1,6 @@
 package com.codegym.book_store.security.userprincal;
 
+import com.codegym.book_store.dto.reponse.GooglePojo;
 import com.codegym.book_store.model.Address;
 import com.codegym.book_store.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,6 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,6 +34,13 @@ public class UserPrinciple implements UserDetails {
     private Address address;
     private Collection<? extends GrantedAuthority> roles;
 
+    public UserPrinciple(String name, String email, String avatar, Collection<? extends GrantedAuthority> roles) {
+        this.name = name;
+        this.email = email;
+        this.avatar = avatar;
+        this.roles = roles;
+    }
+
     public static UserPrinciple build(User user) {
         List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getName().name())).collect(Collectors.toList());
@@ -45,6 +54,17 @@ public class UserPrinciple implements UserDetails {
                 user.getGender(),
                 user.getAvatar(),
                 user.getAddress(),
+                authorities);
+    }
+
+    public static UserPrinciple buildUser(GooglePojo googlePojo) {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+
+        return new UserPrinciple(
+                googlePojo.getName(),
+                googlePojo.getEmail(),
+                googlePojo.getPicture(),
                 authorities);
     }
 

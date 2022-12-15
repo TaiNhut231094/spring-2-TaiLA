@@ -4,7 +4,6 @@ import com.codegym.book_store.security.jwt.JwtEntryPoint;
 import com.codegym.book_store.security.jwt.JwtTokenFilter;
 import com.codegym.book_store.security.userprincal.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -38,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure (AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
@@ -50,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure (HttpSecurity httpSecurity) throws Exception {
+    public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors().and().csrf().disable()
                 .authorizeRequests().antMatchers("/api/public/**").permitAll().and()
 

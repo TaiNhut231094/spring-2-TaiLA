@@ -80,6 +80,12 @@ export class ListComponent implements OnInit {
     this.dataService.changeData({
       quantity: this.cartService.getTotalQuantity()
     });
-    Swal.fire('Thông Báo !!', 'Đã thêm vào giỏ hàng', 'success').then();
+    Swal.fire({
+      icon: 'success',
+      title: 'Thông báo!!',
+      html: 'Đã thêm vào giỏ hàng',
+      showConfirmButton: false,
+      timer: 1000
+    }).then();
   }
 }

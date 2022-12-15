@@ -1,5 +1,6 @@
 package com.codegym.book_store.security.userprincal;
 
+import com.codegym.book_store.dto.reponse.GooglePojo;
 import com.codegym.book_store.model.User;
 import com.codegym.book_store.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,9 @@ public class UserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found -> usrename or password" + username));
         return UserPrinciple.build(user);
+    }
+
+    public UserDetails loadUserGooglePojo(GooglePojo googlePojo) {
+        return UserPrinciple.buildUser(googlePojo);
     }
 }

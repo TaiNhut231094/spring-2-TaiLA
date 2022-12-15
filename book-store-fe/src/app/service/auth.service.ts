@@ -28,4 +28,11 @@ export class AuthService {
       password: signInForm.password
     }, this.httpOptions);
   }
+
+  loginGoogle(token: string): Observable<any> {
+    // tslint:disable-next-line:max-line-length
+    // return this.httpClient.post( 'https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/api/public/auth/login-google&response_type=code' +
+    //   '&client_id=531954897444-hsskaandnq4jd4688062gbludfanl04a.apps.googleusercontent.com&approval_prompt=force', this.httpOptions);
+    return this.httpClient.get(API_URL + 'auth/login-google?token=' + token);
+  }
 }

@@ -6,6 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {ShareService} from '../../service/share.service';
 import {Title} from '@angular/platform-browser';
+import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
 
 @Component({
   selector: 'app-sign-in',
@@ -19,6 +20,7 @@ export class SignInComponent implements OnInit {
 
   constructor(private toastrService: ToastrService,
               private authService: AuthService,
+              private socialAuthService: SocialAuthService,
               private tokenStorageService: TokenStorageService,
               private router: Router,
               private shareService: ShareService,
@@ -36,7 +38,7 @@ export class SignInComponent implements OnInit {
     if (this.tokenStorageService.getToken()) {
       this.authService.isLoggedIn = true;
       this.roles = this.tokenStorageService.getUser().roles;
-      this.username =  this.tokenStorageService.getUser().username;
+      this.username = this.tokenStorageService.getUser().username;
     }
   }
 
@@ -64,6 +66,21 @@ export class SignInComponent implements OnInit {
         });
         this.shareService.sendClickEvent();
       }
+    });
+  }
+
+  loginGoogle() {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(jwtResponse => {
+      console.log(jwtResponse.idToken);
+      // this.tokenStorageService.saveTokenSession(jwtResponse.token);
+      // this.tokenStorageService.saveUserSession(jwtResponse);
+      // this.authService.isLoggedIn = true;
+      // this.router.navigateByUrl('cart').then();
+      // this.toastrService.success('Chào ' + this.tokenStorageService.getUser().email, 'Đăng nhập thành công', {
+      //   extendedTimeOut: 1500,
+      //   timeOut: 3000
+      // });
+      // this.shareService.sendClickEvent();
     });
   }
 }

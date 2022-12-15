@@ -19,15 +19,18 @@ public class JwtResponse {
     private String type = "Bearer";
     private String name;
     private String username;
+    private String email;
     private String avatar;
     private String phoneNumber;
     private Address address;
     private Collection<? extends GrantedAuthority> roles;
 
-    public JwtResponse(String token, String name, String username, String avatar, String phoneNumber, Address address, Collection<? extends GrantedAuthority> roles) {
+    public JwtResponse(String token, Long id, String name, String username, String email, String avatar, String phoneNumber, Address address, Collection<? extends GrantedAuthority> roles) {
         this.token = token;
+        this.id = id;
         this.name = name;
         this.username = username;
+        this.email = email;
         this.avatar = avatar;
         this.phoneNumber = phoneNumber;
         this.address = address;

@@ -871,7 +871,7 @@ INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('90 Lê Đ�
 INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('89 Lê Đại Hành', '344');
 INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('21 Lê Lợi', '333');
 INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('2 Lý Thái Tổ', '10');
-INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('23 Trần Bình Trọng', '`author_id`');
+INSERT INTO `book_store`.`address` (`street`, `district_id`) VALUES ('23 Trần Bình Trọng', '100');
 
 -- ------------------------------- author ---------------------------------
 INSERT INTO `book_store`.`author` (`name`) VALUES ('Cao Minh');
@@ -921,7 +921,7 @@ INSERT INTO `book_store`.`publishing_company` (`name`) VALUES ('Nhà Xuất Bả
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ('https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1590721540i/53599866.jpg', '408', 94000, '2017-10-10','20.5x13.4', 'Muôn Kiếp Nhân Sinh - Tập 1','2', '1', 11);
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ('https://images.thuvienpdf.com/DuP5NAYU8W.webp',  '540', 94000, '2022-10-10','20.5x14',  'Muôn Kiếp Nhân Sinh - Tập 2', '2', '1', 2);
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://product.hstatic.net/200000122283/product/h_nh_tr_nh_v_ph_ng_ng_b_a_1_31beebe313f64941a3548ebf2c51ced4_master.jpg',  '208', 94000, '2022-10-10','24x15','Hành Trình Về Phương Đông', '2', '1', 2);
-INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://product.hstatic.net/200000305869/product/b_a_thi_n_t_i_b_n_tr_i_k_i_n_b_n_ph_i_1_2ca931f2aee1436980c94047001b15b1.png',  '424', 94000, '2022-10-10','24x13','Thiên Tài Bên Trái, Kẻ Điên Bên Phải', '1', '2', 12);
+INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `auaddressthor_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://product.hstatic.net/200000305869/product/b_a_thi_n_t_i_b_n_tr_i_k_i_n_b_n_ph_i_1_2ca931f2aee1436980c94047001b15b1.png', '424', 94000, '2022-10-10','24x13','Thiên Tài Bên Trái, Kẻ Điên Bên Phải', '1', '2', 12);
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://salt.tikicdn.com/ts/product/5e/d2/3b/06159d088a9e8c9861899b9a7f0e8acd.jpg',  '352',94000, '2022-10-10','24x14','Sổ Tay Nhà Thôi Miên', '1', '1', 2);
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://salt.tikicdn.com/cache/w1200/media/catalog/product/1/7/174604_p62763mbiamuonanthiduocanoutconvert01.u547.d20160512.t150032.jpg',  '164',94000, '2021-10-10','20.5x15','Muốn An Được An', '3', '4', 2);
 INSERT INTO `book_store`.`book` (`image_url`, `number_of_pages`, `price`, `release_date`, `size`, `title`, `author_id`, `publishing_company_id`, `translator_id`) VALUES ( 'https://langmai.org/wp-content/uploads/2019/07/bi%CC%80a1_Duong-xua-may-trang_TB6_2019.jpeg',  '718',94000, '2022-10-10','24x13','Đường Xưa Mây Trắng', '3', '5', 2);
@@ -960,63 +960,6 @@ UPDATE `book_store`.`book` SET `quantity` = '44', `summary` = 'Khi một lá th�
 UPDATE `book_store`.`book` SET `quantity` = '92', `summary` = 'Tập đại thành Tiểu thuyết kỳ ảo của J.R.R. Tolkien' WHERE (`id` = '20');
 UPDATE `book_store`.`book` SET `quantity` = '48', `summary` = 'Bộ sách đồ sộ và đình đám Trò chơi vương quyền là một series tiểu thuyết sử thi viễn tưởng của tiểu thuyết gia nổi tiếng người Mỹ George R. R. Martin. Lấy cảm hứng từ tiểu thuyết \"Cuộc chiến hoa hồng\" và \"Ivanhoe\" Martin bắt đầu viết bộ sách vào năm 1991 và năm 1996 ông cho ra mắt ấn phẩm đầu tiên. Cuốn tiểu thuyết cũng như cả bộ sách nhanh chóng nhận được sự đón chào nhiệt liệt của một lượng fan hâm mộ khổng lồ, trở thành các tác phẩm best seller của nhiều bảng xếp hạng uy tín.' WHERE (`id` = '21');
 UPDATE `book_store`.`book` SET `quantity` = '84', `summary` = 'Bộ sách đồ sộ và đình đám Trò chơi vương quyền là một series tiểu thuyết sử thi viễn tưởng của tiểu thuyết gia nổi tiếng người Mỹ George R. R. Martin. Lấy cảm hứng từ tiểu thuyết \"Cuộc chiến hoa hồng\" và \"Ivanhoe\" Martin bắt đầu viết bộ sách vào năm 1991 và năm 1996 ông cho ra mắt ấn phẩm đầu tiên. Cuốn tiểu thuyết cũng như cả bộ sách nhanh chóng nhận được sự đón chào nhiệt liệt của một lượng fan hâm mộ khổng lồ, trở thành các tác phẩm best seller của nhiều bảng xếp hạng uy tín. Từ dự định viết một bộ ba tập lúc ban đầu, đến nay Martin đã đẩy kế hoạch đó lên thành bảy tập; và tập năm của bộ sách đã được phát hành vào 12/07/2011 vừa qua.' WHERE (`id` = '22');
-
-
--- ------------------- book detail ----------------------------------------  
-
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '1');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '2');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '3');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '4');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '4');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '4');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '5');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '5');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '5');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '6');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('10', '7');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('11', '8');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '8');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '9');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '9');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '8');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '10');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '10');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '11');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '11');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '11');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '12');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '12');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '12');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('4', '12');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('4', '13');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '13');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '13');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '13');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('4', '14');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '14');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '14');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '14');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('4', '15');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '15');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '15');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '15');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '17');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '17');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '18');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '18');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '19');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '19');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('4', '16');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('9', '16');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('17', '16');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('13', '16');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '20');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '20');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '21');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '21');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('16', '22');
-INSERT INTO `book_store`.`book_detail` (`category_id`, `book_id`) VALUES ('8', '22');
 
 
 -- -------------------------- cart ----------------------------------------------

@@ -3,6 +3,7 @@ package com.codegym.book_store.controller;
 import com.codegym.book_store.dto.projections.BookProjection;
 import com.codegym.book_store.model.Book;
 import com.codegym.book_store.model.Category;
+import com.codegym.book_store.repository.IBookRepository;
 import com.codegym.book_store.service.IBookService;
 import com.codegym.book_store.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
